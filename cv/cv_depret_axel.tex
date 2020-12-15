@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic} 
+\moderncvcolor{blue}
+\setlength{\hintscolumnwidth}{3cm}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.9]{geometry}
+\usepackage{helvet}
+\usepackage[french]{babel}
+\usepackage{stackengine}
+\usepackage{enumitem}
+
+\name{Axel}{DEPRET}
+\title{Ingénieur étude et développement} 
+\address{22 bis rue de l'abrivado}{34\,070 Montpellier}{France}
+\phone[mobile]{06~69~67~40~39}
+\email{axel.depret.pro@gmail.com}
+\social[linkedin][fr.linkedin.com/pub/axel-depret/108/699/658]{Depret Axel}
+\social[github]{splitant}
+\extrainfo{\\Français\\Né le 27/07/1993\\Permis B}
+\photo[95pt][0.2pt]{images/axel}
+\begin{document}
+\makecvtitle
+
+\newcommand{\cventrylogo}[9][.25em]{% 
+\cvitem[#1]{#2}{% 
+  {\bfseries#3}% 
+  \ifthenelse{\equal{#4}{}}{}{\ifthenelse{\equal{#4}{,}}{,}{, {\slshape#4}}}% 
+  \ifthenelse{\equal{#5}{}}{}{, #5}% 
+  \ifthenelse{\equal{#6}{}}{}{, #6.}% 
+  \ifthenelse{\equal{#7}{}}{}{% 
+    \ifthenelse{\equal{#8}{}}{}{\hfill \raisebox{-0.3\height}{\includegraphics[width=#8]{#7}}}}%
+  \strut% 
+  \ifx&#9&% 
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#9\end{minipage}}\fi} }
+
+\newcommand{\cvsingleitembold}[2]{\cvitem{\textbf{#1}}{#2}}
+\newcommand{\cvdoubleitembold}[4]{\cvdoubleitem{\textbf{#1}}{#2}{\textbf{#3}}{#4}}
+
+\section{Formation}
+\cventrylogo{2015--2017}{Master 2 Architecture et ingénierie du logiciel et du web}{}{}{}{images/um}{20mm}{\textit{Université Montpellier}}
+\cventrylogo{2014--2015}{Master 1 Architecture et ingénierie du logiciel et du web}{}{}{}{images/um}{20mm}{\textit{Université Montpellier}}
+\cventrylogo{2013--2014}{Licence 3 informatique}{}{}{}{images/um}{20mm}{\textit{Université Montpellier}}
+\cventrylogo{2011--2013}{IUT informatique}{}{}{}{images/iut}{20mm}{\textit{Montpellier}}
+%\cventry{2011}{Baccalauréat Scientifique option Sciences de l'Ingénieur}{\newline Lycée Joseph Vallot}{Lodève}{\newline \textit{mention Assez bien}}{}
+
+\section{Experiences professionnelles}
+\cventrylogo{août 2019--\\Actuellement}{Ingénieur étude et développement à La Poste BSCC}{\textit{Montpellier}}{}{}{images/laposte}{10mm}{
+  Travaux réalisés sous la méthode SAFe :
+  \begin{itemize}[label=\textbullet]
+  \item Portail Assistant Courrier -- Site regroupant des outils et conseils destinés aux entreprises et collectivités
+  \item Solutionsbtob -- Ensemble de "minisites" présentant des solutions business 
+  \item Webcallback3634 -- Formulaire permettant d'être appelé par un conseiller
+  \end{itemize}
+}
+\cventrylogo{janvier 2017--\\août 2019}{Stagiaire puis ingénieur étude et développement à SMILE}{\textit{Montpellier}}{}{}{images/smile}{15mm}{
+  \begin{itemize}[label=\textbullet]
+  \item Création de sites vitrines pour BNP Paribas Real Estate
+  \item Refonte du site de SMILE
+  \item Responsable technique sur le projet IFWE de DASSAULT Systemes
+  \end{itemize}
+}
+
+\section{Compétences informatiques}
+\cvdoubleitembold{Développ. Web}{PHP, SQL, HTML/CSS, Sass, JQuery, XML, JSON, Drupal, Symfony}{Base de données}{MySQL, Oracle, SQLite}
+\cvdoubleitembold{Langages}{Python, Bash, C}{Conception}{Design Pattern}
+\cvdoubleitembold{Virtualisation}{Docker, LXC, VirtualBox}{Mobile}{Android SDK, Cordoba}
+\cvsingleitembold{Autres}{Composer, Pip, Elasticsearch, Méthode SAFe, Tkinter}
+
+\section{Divers}
+\cvdoubleitembold{Langue}{\textbf{Français} : Langue maternelle \\ \textbf{Anglais} : Lu\up{+}, écrit\up{+}, parlé\up{+} \\ \textbf{Espagnol} : Niveau scolaire}{Loisirs}{football, tennis, cyclisme, jeux vidéo, piano}
+
+
+\end{document}
