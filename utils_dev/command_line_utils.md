@@ -2,44 +2,55 @@
 
 Some helpfull commands line.
 
-#### Search all jpg images in the system and archive it.
+## Sources
+
+* [Cheat](https://github.com/cheat/cheat)
+* [ExplainShell](https://explainshell.com/)
+
+### Search all jpg images in the system and archive it.
 
 ```bash
 find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
 ```
 
-#### Download all the URLs mentioned in the url-list.txt file
+### Download all the URLs mentioned in the url-list.txt file
 
 ```bash
 cat url-list.txt | xargs wget –c
 ```
 
-#### Update, upgrade and shutdown
+### Directory size
 
 ```bash
-sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo shutdown -h now
+du -sh <directory_name>
 ```
 
-#### List lines file of 'pattern' occurence
+### Update, upgrade and shutdown
+
+```bash
+sudo apt update -y && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo shutdown -P now
+```
+
+### List lines file of 'pattern' occurence
 
 ```bash
 grep -rnw '/path/to/somewhere/' -e 'pattern' 
 ```
 
-#### Replace string in gzip file
+### Replace string in gzip file
 
 ```bash
 gunzip < file.gz | sed -e 's/search_str/replace_str/g' | gzip -c > temp.gz;
 mv temp.gz file.gz;
 ```
 
-#### unzip file
+### unzip file
 
 ```bash
 gunzip -c <compressed-file>.gz > <decompressed-file>
 ```
 
-#### Mysql dump
+### Mysql dump
 
 ```bash
 mysqldump -u"<user>" -h"<db_host>" -p "<db_name>" --single-transaction --create-options --extended-insert --complete-insert --databases --add-drop-database > dump_$(date +%d%m%Y-%H%M%S).sql
@@ -51,7 +62,7 @@ With gzip :
 mysqldump -u"<user>" -h"<db_host>" -p "<db_name>" --single-transaction --create-options --extended-insert --complete-insert --databases --add-drop-database | gzip > dump_$(date +%d%m%Y-%H%M%S).sql.gz
 ```
 
-#### Mysql restore
+### Mysql restore
 
 ```bash
 mysql -u"<user>" -h"<db_host>" -p "<db_name>" < <dump_name>.sql
@@ -63,26 +74,44 @@ With gzip :
 zcat <dump_name>.sql.gz | mysql -u"<user>" -h"<db_host>" -p "<db_name>"
 ```
 
-#### Backup files
+### Backup files
 
 ```bash
 tar -czvf <directory>.tar.gz <directory>;
 ```
 
-#### List services with port used
+### List services with port used
 
 ```bash
 netstat -tulpn
 ```
 
-#### List services or processes
+### List services or processes
 
 ```bash
 ps aux | grep -i <service_name> 
 ```
 
-#### Check server access
+### Check server access
 
 ```bash
 telnet <server_name_or_ip> <port>
+```
+
+### Download content from URL
+
+```bash
+curl -o <filename> <url>
+```
+
+with following redirections : 
+
+```bash
+curl -L -o <filename> <url>
+```
+
+with only HTTP headers : 
+
+```bash
+curl -v <url>
 ```
