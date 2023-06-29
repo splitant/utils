@@ -19,10 +19,22 @@ find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
 cat url-list.txt | xargs wget –c
 ```
 
+### Display which distro is installed
+
+```bash
+cat /etc/issue
+```
+
 ### Directory size
 
 ```bash
 du -sh <directory_name>
+```
+
+all sub-directories size : 
+
+```bash
+du -h --max-depth=1
 ```
 
 ### Update, upgrade and shutdown
@@ -44,7 +56,7 @@ gunzip < file.gz | sed -e 's/search_str/replace_str/g' | gzip -c > temp.gz;
 mv temp.gz file.gz;
 ```
 
-### unzip file
+### Unzip file
 
 ```bash
 gunzip -c <compressed-file>.gz > <decompressed-file>
@@ -113,5 +125,17 @@ curl -L -o <filename> <url>
 with only HTTP headers : 
 
 ```bash
-curl -v <url>
+curl -I <url>
+```
+
+### Patch file
+
+```bash
+patch -p1 < file.patch
+```
+
+Revert a patch : 
+
+```bash
+patch -R -p1 < file.patch
 ```

@@ -1,0 +1,33 @@
+## Crontab
+
+Toutes les actions doivent être effectuées avec l'utilisateur dédié au projet.
+
+Créer un fichier contenant toutes vos tâches cron suivant la syntaxe:
+
+~~~
+ .---------------- minute (0 - 59)
+ |  .------------- hour (0 - 23)
+ |  |  .---------- day of month (1 - 31)
+ |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+ |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+ |  |  |  |  |
+ 
+ *  *  *  *  *  CMD
+~~~
+
+### Ajouter vos tâches au système:
+
+```bash
+crontab <file>
+```
+
+### Mise à jour des tâches
+
+Lors de la mise à jour, par précaution il faut supprimer les tâches déjà active et les remplacer par les nouvelles.
+
+```bash
+crontab -r
+crontab <new file>
+```
+
+**!!! Tester le retour de la commande de suppression (crontab -r) pour éviter d'avoir des tâches en doubles !!!**

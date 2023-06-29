@@ -1,0 +1,14 @@
+[user]
+        email = email@git.com
+        name = gitname
+[core]
+        editor = vim
+        pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+        diffFilter = diff-so-fancy --patch
+[fetch]
+        prune = true
+[push]
+        autoSetupRemote = true
+[pull]
+        rebase = true

@@ -34,3 +34,15 @@ drush sql-dump --result-file=auto --gzip --structure-tables-list='cache,cache_*'
 ```bash
 drush uli;
 ```
+
+### Set maintenance
+
+On : 
+```bash
+drush sset system.maintenance_mode 1;
+```
+
+Off : 
+```bash
+drush sset system.maintenance_mode 0;
+```
